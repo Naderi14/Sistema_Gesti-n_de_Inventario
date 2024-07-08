@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Jab\u00f3n Kyrey",
+        "cantidad": 10,
+        "precioReal": 1.59,
+        "precio": 0.89,
+        "rebaja": 25,
+        "estaRebajado": true
+    },
+    {
+        "id": 2,
+        "nombre": "Monitor Samsung Lc27225",
+        "cantidad": 5,
+        "precioReal": 120.35,
+        "precio": 120.35,
+        "rebaja": 0.0,
+        "estaRebajado": false
+    },
+    {
+        "id": 3,
+        "nombre": "Silla Madera Desmontable",
+        "cantidad": 1,
+        "precioReal": 12.45,
+        "precio": 12.45,
+        "rebaja": 0.0,
+        "estaRebajado": false
+    },
+    {
+        "id": 4,
+        "nombre": "Aigua De Ribes",
+        "cantidad": 50,
+        "precioReal": 0.65,
+        "precio": 0.47,
+        "rebaja": 15,
+        "estaRebajado": true
+    },
+    {
+        "id": 6,
+        "nombre": "Bastones para el oido",
+        "cantidad": 25,
+        "precioReal": 0.85,
+        "precio": 0.85,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 7,
+        "nombre": "Preparado para cocido",
+        "cantidad": 10,
+        "precioReal": 3.65,
+        "precio": 3.47,
+        "rebaja": 5,
+        "estaRebajado": true
+    }
+]
