@@ -2,72 +2,45 @@
     {
         "id": 1,
         "nombre": "Jabon de manos",
-        "cantidad": 8,
+        "cantidad": 35,
         "precioReal": 1.45,
         "precio": 1.45,
-        "rebaja": 0.0,
+        "rebaja": 0,
         "estaRebajado": false
     },
     {
         "id": 2,
-        "nombre": "Paraguas Plegable con funda",
-        "cantidad": 4,
-        "precioReal": 16.35,
-        "precio": 13.25,
-        "rebaja": 10,
+        "nombre": "Monitor Lenovo UC123145",
+        "cantidad": 3,
+        "precioReal": 55.68,
+        "precio": 43.12,
+        "rebaja": 12,
         "estaRebajado": true
     },
     {
         "id": 3,
-        "nombre": "C\u00f3ctel de frutos secos",
-        "cantidad": 20,
-        "precioReal": 1.25,
-        "precio": 1.25,
+        "nombre": "Monitor AOC",
+        "cantidad": 4,
+        "precioReal": 85.67,
+        "precio": 85.67,
         "rebaja": 0,
         "estaRebajado": false
     },
     {
         "id": 4,
-        "nombre": "Papel Higi\u00e9nico doble capa",
-        "cantidad": 15,
-        "precioReal": 3.6,
-        "precio": 3.6,
+        "nombre": "Macarrones con queso",
+        "cantidad": 10,
+        "precioReal": 3.4,
+        "precio": 3.4,
         "rebaja": 0,
         "estaRebajado": false
     },
     {
         "id": 5,
-        "nombre": "Cuberteria de aluminio inoxidable",
-        "cantidad": 10,
-        "precioReal": 28.65,
-        "precio": 25.86,
-        "rebaja": 5,
-        "estaRebajado": true
-    },
-    {
-        "id": 6,
-        "nombre": "Vajilla de porcelana",
-        "cantidad": 3,
-        "precioReal": 68.5,
-        "precio": 68.5,
-        "rebaja": 0,
-        "estaRebajado": false
-    },
-    {
-        "id": 7,
-        "nombre": "Monitor AOC",
-        "cantidad": 4,
-        "precioReal": 75.66,
-        "precio": 75.66,
-        "rebaja": 0,
-        "estaRebajado": false
-    },
-    {
-        "id": 8,
-        "nombre": "Botella de 1L Vidrio Templado",
-        "cantidad": 6,
-        "precioReal": 6.55,
-        "precio": 6.55,
+        "nombre": "Champ\u00fa Kyrey",
+        "cantidad": 20,
+        "precioReal": 1.85,
+        "precio": 1.85,
         "rebaja": 0,
         "estaRebajado": false
     }

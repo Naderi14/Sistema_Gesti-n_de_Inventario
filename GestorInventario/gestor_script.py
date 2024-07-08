@@ -128,7 +128,7 @@ class Gestor():
                 # Abrimos y cargamos el historial de fechas y valores brutos a memoria
                 try:
                     for historial in historiales:
-                        fechaActual = dtt.fromisoformat(historial['fecha'])
+                        fechaActual = historial['fecha']
                         valorActual = historial['valorBruto']
                         pasoHistorial = {
                             'fecha' : fechaActual,

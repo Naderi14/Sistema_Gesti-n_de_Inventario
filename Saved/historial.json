@@ -1,50 +1,42 @@
 [
     {
-        "fecha": "2024-07-08",
+        "fecha": "2024-07-01",
         "valorBruto": 14.5
     },
     {
-        "fecha": "2024-07-08",
-        "valorBruto": 14.5
+        "fecha": "2024-07-02",
+        "valorBruto": 292.9
+    },
+    {
+        "fecha": "2024-07-03",
+        "valorBruto": 635.58
+    },
+    {
+        "fecha": "2024-07-04",
+        "valorBruto": 669.58
+    },
+    {
+        "fecha": "2024-07-05",
+        "valorBruto": 706.58
+    },
+    {
+        "fecha": "2024-07-06",
+        "valorBruto": 705.13
+    },
+    {
+        "fecha": "2024-07-07",
+        "valorBruto": 742.83
     },
     {
         "fecha": "2024-07-08",
-        "valorBruto": 440.55
+        "valorBruto": 798.51
     },
     {
-        "fecha": "2024-07-08",
-        "valorBruto": 505.95
+        "fecha": "2024-07-09",
+        "valorBruto": 798.51
     },
     {
-        "fecha": "2024-07-08",
-        "valorBruto": 537.2
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 591.2
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 877.7
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 1083.2
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 1076.95
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 1074.05
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 648.0
-    },
-    {
-        "fecha": "2024-07-08",
-        "valorBruto": 950.64
+        "fecha": "2024-07-10",
+        "valorBruto": 631.47
     }
 ]

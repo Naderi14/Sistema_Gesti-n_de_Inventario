@@ -6,6 +6,7 @@ from GestorInventario.gestor_script import Gestor
 from Utilidades import util_script as us
 from PIL import Image, ImageTk
 import rute_script as rs
+import matplotlib.pyplot as plt
 
 class SGIgui(ttk.Frame):
     def __init__(self, root):
@@ -101,7 +102,7 @@ class SGIgui(ttk.Frame):
         self.menubar = Menu(self.root)
 
         self.fileMenu = Menu(self.menubar, tearoff=0)
-        self.fileMenu.add_command(label="Gráfico Financiero", command=us.showInProgress)
+        self.fileMenu.add_command(label="Gráfico Financiero", command=self.GenerarGrafica)
         self.fileMenu.add_separator()
         self.fileMenu.add_command(label="Exportar Inventario", command=self.ExportarInv)
         self.fileMenu.add_separator()
@@ -699,6 +700,7 @@ class SGIgui(ttk.Frame):
 
     def ActualizarProducto(self):
         if self.productoSeleccionado:
+            opcion = False
             itemsIntroducidos = False
             itemsProducto = {
                 'nombre' : None,
@@ -717,7 +719,6 @@ class SGIgui(ttk.Frame):
                     print("NOMBRE INTRODUCIDO CORRECTAMENTE")
             if self.entryPrecio2.get() != "Ej: 1.45":
                 self.result = None
-                opcion = False
                 precio = self.entryPrecio2.get()
                 us.CheckPrecioGUI(self, precio)
                 if self.result != None:
@@ -798,7 +799,6 @@ class SGIgui(ttk.Frame):
                         self.productoSeleccionado.AplicarRebaja(self.result)
                         print("Rebaja Aplicada")
                         messagebox.showinfo("Info", f"Se ha aplicado una rebaja del {self.result}% al producto '{self.productoSeleccionado.nombreProducto}'")
-                        self.gestor.PasarValorHistorial()
                         self.gestor.GuardarArchivo()
                         self.CambiarFrame('rebajaFrame')
             else:
@@ -813,7 +813,6 @@ class SGIgui(ttk.Frame):
                 self.productoSeleccionado.QuitarRebaja()
                 print("Rebaja Quitada")
                 messagebox.showinfo("Info", f"Se ha quitado la rebaja al producto '{self.productoSeleccionado.nombreProducto}'")
-                self.gestor.PasarValorHistorial()
                 self.gestor.GuardarArchivo()
                 self.CambiarFrame('rebajaFrame')
             else:
@@ -862,4 +861,28 @@ class SGIgui(ttk.Frame):
         ruta = rutaArchivo
 
         self.gestor.ExportarExcel(ruta)
+
+    def GenerarGrafica(self):
+        fechas = []
+        valores = []
+        valorMaximo = 0
+
+        plt.style.use('classic')
+        fig, ax = plt.subplots()
+
+        for item in self.gestor.fechasValorBruto:
+            fechas.append(item['fecha'])
+            valores.append(int(item['valorBruto']))
+            if item['valorBruto'] > valorMaximo:
+                valorMaximo = item['valorBruto']
         
+        margenGrafico = (valorMaximo * 0.2) + valorMaximo
+        ax.plot(fechas, valores, color='red')
+
+        ax.set_title("Histórico Valor Bruto Relativo", fontsize=20)
+        ax.set_xlabel('', fontsize=14)
+        fig.autofmt_xdate()
+        ax.set_ylabel("Valor bruto ( € )", fontsize=14)
+        plt.ylim((-15, margenGrafico))
+
+        plt.show()
