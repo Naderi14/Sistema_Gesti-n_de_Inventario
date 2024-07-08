@@ -1,0 +1,50 @@
+ ==========================================================================
+ |Términos y Condiciones de Uso del Sistema de Gestión de Inventario (SGI)|
+ ==========================================================================
+/////// 1. Aceptación de los Términos ///////
+---------------------------------------------------------------------------
+Al descargar, instalar y utilizar el Sistema de Gestión de Inventario (SGI), usted acepta los siguientes términos y condiciones de uso. Si no está de acuerdo con estos términos, no utilice el software.
+
+/////// 2. Licencia de Uso ///////
+---------------------------------------------------------------------------
+El Sistema de Gestión de Inventario (SGI) es un software de libre uso y gratuito. Usted puede descargar, instalar y utilizar el SGI sin ningún costo. No obstante, este software se proporciona "tal cual" y sin ninguna garantía de ningún tipo.
+
+/////// 3. Funcionalidades del Software ///////
+---------------------------------------------------------------------------
+El SGI permite a los usuarios gestionar un inventario con las siguientes características:
+ - Productos: Incluir nombre, precio, cantidad, estado de rebaja y porcentaje de rebaja.
+ - Gestión de Productos: Agregar, eliminar y vender productos.
+ - Estadísticas Financieras: Generar y visualizar estadísticas financieras básicas.
+ - Manejo de Inventarios: Guardar el inventario en cualquier directorio de su PC, empezar nuevos inventarios y cargar inventarios previos.
+
+/////// 4. Responsabilidad sobre la Confidencialidad de los Datos ///////
+---------------------------------------------------------------------------
+El SGI está diseñado para operar en un entorno local. Como desarrollador del software, me excluyo de cualquier responsabilidad relacionada con la confidencialidad de los datos ingresados y utilizados en el programa. El usuario es el único responsable de proteger y asegurar la privacidad de su información.
+
+/////// 5. Privacidad de los Datos ///////
+---------------------------------------------------------------------------
+Debido a que el SGI opera en un entorno local y no transmite datos a través de internet, no recopilamos ni almacenamos información personal ni datos de inventario en servidores externos. Toda la información se guarda y maneja localmente en su propio sistema.
+
+/////// 6. Limitación de Responsabilidad ///////
+---------------------------------------------------------------------------
+En ningún caso el desarrollador será responsable por cualquier daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de uso del SGI, incluso si se ha informado de la posibilidad de dichos daños. Esto incluye, pero no se limita a, la pérdida de datos, interrupción del negocio o pérdida de beneficios.
+
+/////// 7. Actualizaciones y Modificaciones ///////
+---------------------------------------------------------------------------
+El desarrollador del software se reserva el derecho de actualizar y modificar estos términos y condiciones en cualquier momento sin previo aviso. Las modificaciones entrarán en vigor una vez publicadas. Es su responsabilidad revisar periódicamente estos términos para estar informado de cualquier cambio.
+
+/////// 8. Cumplimiento de Leyes ///////
+---------------------------------------------------------------------------
+El uso del SGI debe cumplir con todas las leyes y regulaciones locales, estatales, nacionales e internacionales aplicables. Usted se compromete a no utilizar el software para ningún propósito ilegal o prohibido por estos términos.
+
+/////// 9. Propiedad Intelectual ///////
+---------------------------------------------------------------------------
+Todos los derechos, títulos e intereses en y para el SGI, incluyendo pero no limitándose a derechos de autor, patentes, marcas registradas y secretos comerciales, son y seguirán siendo propiedad exclusiva del desarrollador.
+
+/////// 10. Contacto ///////
+---------------------------------------------------------------------------
+Para cualquier consulta o comentario acerca de estos términos y condiciones, por favor, póngase en contacto conmigo a través del correo electrónico [info@skimdoo.com].
+
+Fecha de Última Actualización: [04/07/2024]
+
+Al usar el Sistema de Gestión de Inventario (SGI), usted reconoce que ha leído, comprendido y acepta estar sujeto a estos términos y condiciones de uso.
