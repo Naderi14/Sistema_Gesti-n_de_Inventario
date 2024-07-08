@@ -558,27 +558,16 @@ class SGIgui(ttk.Frame):
         return "break"
 
     def MostrarLista(self):
-        #self.frameLista = Frame(self.botFrame, bg="#65919B")
-        #self.frameLista.pack(fill="both", expand=1)
         self.listaProductos.delete(0, "end")
         self.listaProductos.insert(END, "---------------------------------------------------------------------------------------------------------------------------")
         # Añadimos los productos a la lista
         for producto in self.gestor.productos:
-            #self.listaProductos.insert(END, f"ID:{producto.id} | {producto.nombreProducto} | {producto.cantidad}uds. | {producto.precio}€")
             if producto.estaRebajado == False:
                 texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precio}€\n"
             else:
                 texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
             self.listaProductos.insert(END, texto)
             self.listaProductos.insert(END, "---------------------------------------------------------------------------------------------------------------------------")
-            #listaItem = Label(self.botFrame, text=texto, font=("Helvetica", 14), bd=1, bg="#65919B", width=50, justify="right").pack(fill='y',anchor='nw', padx=5, pady=5)
-        
-        #canvas = Canvas(self.frameLista, bg="#65919B")
-        #canvas.pack(fill="both", expand=1)
-
-        #scrollBar = Scrollbar(self.frameLista, orient='vertical', command=canvas.yview)
-        #canvas.config(yscrollcommand=scrollBar.set)
-        #scrollBar.pack(side="right", fill="y")
 
     def BuscarID(self):
         # Reset de todas las etiquetas
@@ -761,7 +750,6 @@ class SGIgui(ttk.Frame):
             us.showNoProductoSeleccionado()
 
     def VenderProducto(self):
-        # Lógica para vender un producto
         if self.productoSeleccionado:
             if self.productoSeleccionado.cantidad != 0:
                 if self.entryCantidad3.get() == "Ej: 10":
