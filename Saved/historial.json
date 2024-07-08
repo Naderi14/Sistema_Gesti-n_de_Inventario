@@ -1,42 +1,94 @@
 [
     {
-        "fecha": "2024-07-01",
+        "fecha": "2024-06-01",
         "valorBruto": 14.5
     },
     {
-        "fecha": "2024-07-02",
+        "fecha": "2024-06-02",
         "valorBruto": 292.9
     },
     {
-        "fecha": "2024-07-03",
+        "fecha": "2024-06-03",
         "valorBruto": 635.58
     },
     {
-        "fecha": "2024-07-04",
+        "fecha": "2024-06-04",
         "valorBruto": 669.58
     },
     {
-        "fecha": "2024-07-05",
+        "fecha": "2024-06-05",
         "valorBruto": 706.58
     },
     {
-        "fecha": "2024-07-06",
+        "fecha": "2024-06-06",
         "valorBruto": 705.13
     },
     {
-        "fecha": "2024-07-07",
+        "fecha": "2024-06-07",
         "valorBruto": 742.83
     },
     {
-        "fecha": "2024-07-08",
+        "fecha": "2024-06-08",
         "valorBruto": 798.51
     },
     {
-        "fecha": "2024-07-09",
+        "fecha": "2024-06-09",
         "valorBruto": 798.51
     },
     {
-        "fecha": "2024-07-10",
+        "fecha": "2024-06-10",
         "valorBruto": 631.47
+    },
+    {
+        "fecha": "2024-06-11",
+        "valorBruto": 714.02
+    },
+    {
+        "fecha": "2024-06-12",
+        "valorBruto": 720.32
+    },
+    {
+        "fecha": "2024-06-13",
+        "valorBruto": 805.32
+    },
+    {
+        "fecha": "2024-06-14",
+        "valorBruto": 826.82
+    },
+    {
+        "fecha": "2024-06-15",
+        "valorBruto": 821.02
+    },
+    {
+        "fecha": "2024-06-16",
+        "valorBruto": 765.34
+    },
+    {
+        "fecha": "2024-06-17",
+        "valorBruto": 679.67
+    },
+    {
+        "fecha": "2024-06-18",
+        "valorBruto": 672.27
+    },
+    {
+        "fecha": "2024-06-19",
+        "valorBruto": 666.72
+    },
+    {
+        "fecha": "2024-06-20",
+        "valorBruto": 647.67
+    },
+    {
+        "fecha": "2024-06-21",
+        "valorBruto": 646.77
+    },
+    {
+        "fecha": "2024-06-22",
+        "valorBruto": 629.77
+    },
+    {
+        "fecha": "2024-06-23",
+        "valorBruto": 623.32
     }
 ]

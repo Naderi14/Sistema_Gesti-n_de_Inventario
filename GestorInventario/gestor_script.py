@@ -12,8 +12,8 @@ class Gestor():
     def __init__(self):
         self.productos = []
         self.fechasValorBruto = []
-        self.saldoCuenta = 0.0
-        self.valorBruto = 0.0
+        self.saldoCuenta = 0
+        self.valorBruto = 0
 
     def BuscarProductoGUI(self, id):
         '''
@@ -43,8 +43,7 @@ class Gestor():
                 - estaRebajado (bool) por defecto será False
             Se calculará el valor bruto en función del precio y la cantidad y luego se almacena el objeto a la lista de productos
         '''
-        self.valorBruto += precio * cantidad
-        self.valorBruto = round(self.valorBruto,2)
+        self.valorBruto += round(precio * cantidad, 2)
         self.PasarValorHistorial()
         producto = Producto(nombreProducto, cantidad, precio, precio, rebaja, estaRebajado)
         self.productos.append(producto)
@@ -64,36 +63,36 @@ class Gestor():
         if nombreProducto != "":
             producto.ActualizarNombre(nombreProducto)
         if cantidad != None and precio != None:
-            self.valorBruto -= producto.precio * producto.cantidad
-            self.valorBruto += round(precio * cantidad)
+            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
+            self.valorBruto += round(precio * cantidad, 2)
             self.PasarValorHistorial()
             producto.ActualizarCantidad(cantidad)
             producto.ActualizarPrecio(precio, opcion)
         elif precio != None and cantidad == None:
-            self.valorBruto -= producto.precio * producto.cantidad
-            self.valorBruto += round(precio * producto.cantidad,2)
+            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
+            self.valorBruto += round(precio * producto.cantidad, 2)
             self.PasarValorHistorial()
             producto.ActualizarPrecio(precio, opcion)
         else:
-            self.valorBruto -= producto.precio * producto.cantidad
-            self.valorBruto += round(producto.precio * cantidad,2)
+            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
+            self.valorBruto += round(producto.precio * cantidad, 2)
             self.PasarValorHistorial()
             producto.ActualizarCantidad(cantidad)
 
     def VenderProductoGUI(self, producto, cantidad):
-        self.saldoCuenta += round(cantidad * producto.precio,2)
-        self.valorBruto -= round(producto.precioReal * cantidad,2)
+        self.saldoCuenta += round(cantidad * producto.precio, 2)
+        self.valorBruto -= round(producto.precioReal * cantidad, 2)
         self.PasarValorHistorial()
         cantidadNueva = producto.cantidad - cantidad
         producto.ActualizarCantidad(cantidadNueva)
 
     def EliminarProductoGUI(self, producto, opcion):
         if opcion == 1:
-            self.saldoCuenta += round(producto.cantidad * producto.precio,2)
-            self.valorBruto -= round(producto.precio * producto.cantidad,2)
+            self.saldoCuenta += round(producto.cantidad * producto.precio, 2)
+            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
             self.productos.remove(producto)
         elif opcion == 2:
-            self.valorBruto -= round(producto.precio * producto.cantidad,2)
+            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
             self.productos.remove(producto)
         self.PasarValorHistorial()
     

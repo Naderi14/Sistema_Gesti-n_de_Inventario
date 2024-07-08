@@ -647,10 +647,10 @@ class SGIgui(ttk.Frame):
                 self.infoCantidad3.grid(row=6, column=1, sticky='w', padx=10, pady=10)
         if numEntry == 100:
             self.saldoCuenta.delete(0, 'end')
-            self.saldoCuenta.insert(0, f"{self.gestor.saldoCuenta}")
+            self.saldoCuenta.insert(0, f"{round(self.gestor.saldoCuenta, 2)}")
             self.saldoCuenta.place(x=200, y=300)
             self.valorBruto.delete(0, 'end')
-            self.valorBruto.insert(0, f"{self.gestor.valorBruto}")
+            self.valorBruto.insert(0, f"{round(self.gestor.valorBruto, 2)}")
             self.valorBruto.place(x=200, y=400)
             self.saldoCuenta.bind('<Button-1>', self.QuitarSeleccionLista)
             self.saldoCuenta.bind('<Button-2>', self.QuitarSeleccionLista)
@@ -867,7 +867,7 @@ class SGIgui(ttk.Frame):
         valores = []
         valorMaximo = 0
 
-        plt.style.use('classic')
+        plt.style.use('seaborn-v0_8')
         fig, ax = plt.subplots()
 
         for item in self.gestor.fechasValorBruto:

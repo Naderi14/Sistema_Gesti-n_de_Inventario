@@ -2,25 +2,25 @@
     {
         "id": 1,
         "nombre": "Jabon de manos",
-        "cantidad": 35,
+        "cantidad": 31,
         "precioReal": 1.45,
         "precio": 1.45,
-        "rebaja": 0,
+        "rebaja": 0.0,
         "estaRebajado": false
     },
     {
         "id": 2,
         "nombre": "Monitor Lenovo UC123145",
-        "cantidad": 3,
+        "cantidad": 2,
         "precioReal": 55.68,
-        "precio": 43.12,
+        "precio": 33.4,
         "rebaja": 12,
         "estaRebajado": true
     },
     {
         "id": 3,
         "nombre": "Monitor AOC",
-        "cantidad": 4,
+        "cantidad": 3,
         "precioReal": 85.67,
         "precio": 85.67,
         "rebaja": 0,
@@ -38,9 +38,45 @@
     {
         "id": 5,
         "nombre": "Champ\u00fa Kyrey",
-        "cantidad": 20,
+        "cantidad": 13,
         "precioReal": 1.85,
         "precio": 1.85,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 6,
+        "nombre": "Rat\u00f3n marca blanca",
+        "cantidad": 10,
+        "precioReal": 6.35,
+        "precio": 5.73,
+        "rebaja": 5,
+        "estaRebajado": true
+    },
+    {
+        "id": 7,
+        "nombre": "Botella Font Agudes",
+        "cantidad": 30,
+        "precioReal": 0.18,
+        "precio": 0.18,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 8,
+        "nombre": "Cable Coaxial 5M",
+        "cantidad": 16,
+        "precioReal": 4.25,
+        "precio": 4.25,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 9,
+        "nombre": "Helado relleno de chocolate Frigo",
+        "cantidad": 7,
+        "precioReal": 2.15,
+        "precio": 2.15,
         "rebaja": 0,
         "estaRebajado": false
     }
