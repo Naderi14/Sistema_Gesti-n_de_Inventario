@@ -129,9 +129,11 @@ class Gestor():
                     for historial in historiales:
                         fechaActual = historial['fecha']
                         valorActual = historial['valorBruto']
+                        saldoActual = historial['saldoCuenta']
                         pasoHistorial = {
                             'fecha' : fechaActual,
-                            'valorBruto' : valorActual
+                            'valorBruto' : valorActual,
+                            'saldoCuenta' : saldoActual
                         }
                         self.fechasValorBruto.append(pasoHistorial)
                 except KeyError:
@@ -144,7 +146,8 @@ class Gestor():
         fechaCadena = fechaActual.isoformat()
         pasoHistorial = {
             'fecha' : fechaCadena,
-            'valorBruto' : self.valorBruto
+            'valorBruto' : self.valorBruto,
+            'saldoCuenta' : self.saldoCuenta
         }
         self.fechasValorBruto.append(pasoHistorial)
 

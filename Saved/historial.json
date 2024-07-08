@@ -1,94 +1,117 @@
 [
     {
         "fecha": "2024-06-01",
-        "valorBruto": 14.5
+        "valorBruto": 14.5,
+        "saldoCuenta": 0.0
     },
     {
         "fecha": "2024-06-02",
-        "valorBruto": 292.9
+        "valorBruto": 292.9,
+        "saldoCuenta": 0.0
     },
     {
         "fecha": "2024-06-03",
-        "valorBruto": 635.58
+        "valorBruto": 635.58,
+        "saldoCuenta": 0.0
     },
     {
         "fecha": "2024-06-04",
-        "valorBruto": 669.58
+        "valorBruto": 669.58,
+        "saldoCuenta": 0.0
     },
     {
         "fecha": "2024-06-05",
-        "valorBruto": 706.58
+        "valorBruto": 706.58,
+        "saldoCuenta": 0.0
     },
     {
         "fecha": "2024-06-06",
-        "valorBruto": 705.13
+        "valorBruto": 705.13,
+        "saldoCuenta": 15.40
     },
     {
         "fecha": "2024-06-07",
-        "valorBruto": 742.83
+        "valorBruto": 742.83,
+        "saldoCuenta": 15.40
     },
     {
         "fecha": "2024-06-08",
-        "valorBruto": 798.51
+        "valorBruto": 798.51,
+        "saldoCuenta": 15.40
     },
     {
         "fecha": "2024-06-09",
-        "valorBruto": 798.51
+        "valorBruto": 798.51,
+        "saldoCuenta": 15.40
     },
     {
         "fecha": "2024-06-10",
-        "valorBruto": 631.47
+        "valorBruto": 631.47,
+        "saldoCuenta": 165.61
     },
     {
         "fecha": "2024-06-11",
-        "valorBruto": 714.02
+        "valorBruto": 714.02,
+        "saldoCuenta": 165.61
     },
     {
         "fecha": "2024-06-12",
-        "valorBruto": 720.32
+        "valorBruto": 720.32,
+        "saldoCuenta": 165.61
     },
     {
         "fecha": "2024-06-13",
-        "valorBruto": 805.32
+        "valorBruto": 805.32,
+        "saldoCuenta": 165.61
     },
     {
         "fecha": "2024-06-14",
-        "valorBruto": 826.82
+        "valorBruto": 826.82,
+        "saldoCuenta": 165.61
     },
     {
         "fecha": "2024-06-15",
-        "valorBruto": 821.02
+        "valorBruto": 821.02,
+        "saldoCuenta": 180.25
     },
     {
         "fecha": "2024-06-16",
-        "valorBruto": 765.34
+        "valorBruto": 765.34,
+        "saldoCuenta": 232.16
     },
     {
         "fecha": "2024-06-17",
-        "valorBruto": 679.67
+        "valorBruto": 679.67,
+        "saldoCuenta": 290.20
     },
     {
         "fecha": "2024-06-18",
-        "valorBruto": 672.27
+        "valorBruto": 672.27,
+        "saldoCuenta": 295.20
     },
     {
         "fecha": "2024-06-19",
-        "valorBruto": 666.72
+        "valorBruto": 666.72,
+        "saldoCuenta": 300.20
     },
     {
         "fecha": "2024-06-20",
-        "valorBruto": 647.67
+        "valorBruto": 647.67,
+        "saldoCuenta": 303.20
     },
     {
         "fecha": "2024-06-21",
-        "valorBruto": 646.77
+        "valorBruto": 646.77,
+        "saldoCuenta": 308.20
     },
     {
         "fecha": "2024-06-22",
-        "valorBruto": 629.77
+        "valorBruto": 629.77,
+        "saldoCuenta": 315.61
     },
     {
         "fecha": "2024-06-23",
-        "valorBruto": 623.32
+        "valorBruto": 623.32,
+        "saldoCuenta": 315.61
     }
 ]

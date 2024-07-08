@@ -7,6 +7,7 @@ from Utilidades import util_script as us
 from PIL import Image, ImageTk
 import rute_script as rs
 import matplotlib.pyplot as plt
+from datetime import datetime as dt
 
 class SGIgui(ttk.Frame):
     def __init__(self, root):
@@ -852,25 +853,33 @@ class SGIgui(ttk.Frame):
 
     def GenerarGrafica(self):
         fechas = []
-        valores = []
+        valoresBruto = []
+        saldosCuenta = []
         valorMaximo = 0
 
         plt.style.use('seaborn-v0_8')
         fig, ax = plt.subplots()
 
         for item in self.gestor.fechasValorBruto:
-            fechas.append(item['fecha'])
-            valores.append(int(item['valorBruto']))
+            fechaActual = dt.strptime(item['fecha'], '%Y-%m-%d')
+            fechas.append(fechaActual)
+            valoresBruto.append(int(item['valorBruto']))
+            saldosCuenta.append(int(item['saldoCuenta']))
             if item['valorBruto'] > valorMaximo:
                 valorMaximo = item['valorBruto']
+                if item['saldoCuenta'] > valorMaximo:
+                    valorMaximo = item['saldoCuenta']
         
         margenGrafico = (valorMaximo * 0.2) + valorMaximo
-        ax.plot(fechas, valores, color='red')
+        ax.plot(fechas, valoresBruto, color='red', label='Valor Bruto (€)')
+        ax.plot(fechas, saldosCuenta, color='blue', label='Saldo Cuenta (€)')
 
-        ax.set_title("Histórico Valor Bruto Relativo", fontsize=20)
+        ax.legend()
+
+        ax.set_title("Histórico balance inventario", fontsize=20)
         ax.set_xlabel('', fontsize=14)
         fig.autofmt_xdate()
-        ax.set_ylabel("Valor bruto ( € )", fontsize=14)
+        ax.set_ylabel("Euros ( € )", fontsize=14)
         plt.ylim((-15, margenGrafico))
 
         plt.show()
