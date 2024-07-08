@@ -1,4 +1,4 @@
-import os
+import os, json, datetime
 from Utilidades import util_script as us
 from tkinter import *
 from tkinter import messagebox
@@ -6,6 +6,7 @@ from tkinter import messagebox
 def listaVacia(lista):
     return len(lista) <= 0
 
+# Puñado de alertas, errores e informaciones para notificar al usuario de sus acciones y condiciones del proceso de la aplicación
 def showListaVacia():
     messagebox.showwarning("Aviso", f"El inventario se encuentra vacío")
 
@@ -129,6 +130,11 @@ def CheckIDGUI(gui, id):
             raise ValueError
     except:
         messagebox.showerror("Error", "El ID debe ser mayor a 0, sin decimales")
+    
+def serializarDateTime(obj):
+    if isinstance(obj, datetime.datetime):
+        return obj.isoformat()
+    raise TypeError("Tipo de objeto no serializable")
 
 # =================================================================
 # -------------------- FUNCIONES DEPRECATED -----------------------

@@ -1,56 +1,74 @@
 [
     {
         "id": 1,
-        "nombre": "Jab\u00f3n Kyrey",
-        "cantidad": 10,
-        "precioReal": 1.59,
-        "precio": 0.89,
-        "rebaja": 25,
-        "estaRebajado": true
-    },
-    {
-        "id": 2,
-        "nombre": "Monitor Samsung Lc27225",
-        "cantidad": 5,
-        "precioReal": 120.35,
-        "precio": 120.35,
+        "nombre": "Jabon de manos",
+        "cantidad": 8,
+        "precioReal": 1.45,
+        "precio": 1.45,
         "rebaja": 0.0,
         "estaRebajado": false
     },
     {
+        "id": 2,
+        "nombre": "Paraguas Plegable con funda",
+        "cantidad": 4,
+        "precioReal": 16.35,
+        "precio": 13.25,
+        "rebaja": 10,
+        "estaRebajado": true
+    },
+    {
         "id": 3,
-        "nombre": "Silla Madera Desmontable",
-        "cantidad": 1,
-        "precioReal": 12.45,
-        "precio": 12.45,
-        "rebaja": 0.0,
+        "nombre": "C\u00f3ctel de frutos secos",
+        "cantidad": 20,
+        "precioReal": 1.25,
+        "precio": 1.25,
+        "rebaja": 0,
         "estaRebajado": false
     },
     {
         "id": 4,
-        "nombre": "Aigua De Ribes",
-        "cantidad": 50,
-        "precioReal": 0.65,
-        "precio": 0.47,
-        "rebaja": 15,
+        "nombre": "Papel Higi\u00e9nico doble capa",
+        "cantidad": 15,
+        "precioReal": 3.6,
+        "precio": 3.6,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 5,
+        "nombre": "Cuberteria de aluminio inoxidable",
+        "cantidad": 10,
+        "precioReal": 28.65,
+        "precio": 25.86,
+        "rebaja": 5,
         "estaRebajado": true
     },
     {
         "id": 6,
-        "nombre": "Bastones para el oido",
-        "cantidad": 25,
-        "precioReal": 0.85,
-        "precio": 0.85,
+        "nombre": "Vajilla de porcelana",
+        "cantidad": 3,
+        "precioReal": 68.5,
+        "precio": 68.5,
         "rebaja": 0,
         "estaRebajado": false
     },
     {
         "id": 7,
-        "nombre": "Preparado para cocido",
-        "cantidad": 10,
-        "precioReal": 3.65,
-        "precio": 3.47,
-        "rebaja": 5,
-        "estaRebajado": true
+        "nombre": "Monitor AOC",
+        "cantidad": 4,
+        "precioReal": 75.66,
+        "precio": 75.66,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 8,
+        "nombre": "Botella de 1L Vidrio Templado",
+        "cantidad": 6,
+        "precioReal": 6.55,
+        "precio": 6.55,
+        "rebaja": 0,
+        "estaRebajado": false
     }
 ]

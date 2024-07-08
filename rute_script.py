@@ -10,6 +10,10 @@ def rutaSave(archivo):
         rutaRelativa = "../SGI_Project_GUI/Saved/inventario.json"
         rutaAbsoluta = os.path.abspath(rutaRelativa)
         return f'{rutaAbsoluta}'
+    elif archivo == "historial":
+        rutaRelativa = "../SGI_Project_GUI/Saved/historial.json"
+        rutaAbsoluta = os.path.abspath(rutaRelativa)
+        return f'{rutaAbsoluta}'
 
 def rutaAdjunto(archivo):
     # Rutas para imagenes de la aplicación

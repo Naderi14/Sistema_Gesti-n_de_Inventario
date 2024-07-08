@@ -69,7 +69,9 @@ class SGIgui(ttk.Frame):
         self.InfoEtiquetas(100)
 
     def AbrirTerminos(self):
-        # Creamos el Toplevel
+        ''' 
+        Función para poder abrir una nueva ventana en la que cargaremos un .txt previamente adjuntado en los Resources del programa
+        ''' 
         terminosScreen = Toplevel(self.root)
         terminosScreen.title("Términos y Condiciones de Uso")
         terminosScreen.wm_iconphoto(True, self.icono)
@@ -169,12 +171,15 @@ class SGIgui(ttk.Frame):
         self.entryID3.insert(0, "Ej: 4")
         self.entryID4.delete(0, 'end')
         self.entryID4.insert(0, "Ej: 4")
+        self.infoNombre0.delete(0, "end")
         self.infoNombre1.delete(0, "end")
         self.infoNombre2.delete(0, "end")
         self.infoNombre3.delete(0, "end")
+        self.infoPrecio0.delete(0, "end")
         self.infoPrecio1.delete(0, "end")
         self.infoPrecio2.delete(0, "end")
         self.infoPrecio3.delete(0, "end")
+        self.infoCantidad0.delete(0, "end")
         self.infoCantidad1.delete(0, "end")
         self.infoCantidad2.delete(0, "end")
         self.infoCantidad3.delete(0, "end")
@@ -712,19 +717,15 @@ class SGIgui(ttk.Frame):
                     print("NOMBRE INTRODUCIDO CORRECTAMENTE")
             if self.entryPrecio2.get() != "Ej: 1.45":
                 self.result = None
+                opcion = False
                 precio = self.entryPrecio2.get()
                 us.CheckPrecioGUI(self, precio)
                 if self.result != None:
                     if self.productoSeleccionado.estaRebajado:
-                        opcion = messagebox.askyesno("Producto Rebajado", f"El producto '{self.productoSeleccionado.nombreProducto}' tiene una rebaja del {self.productoSeleccionado.rebaja}%, si actualiza el precio se perderá su estado de rebaja, desea continuar?")
-                        if opcion:
-                            itemsProducto['precio'] = self.result
-                            itemsIntroducidos = True
-                            print("PRECIO INTRODUCIDO CORRECTAMENTE")
-                    else:
-                        itemsProducto['precio'] = self.result
-                        itemsIntroducidos = True
-                        print("PRECIO INTRODUCIDO CORRECTAMENTE")
+                        opcion = messagebox.askyesno("Producto Rebajado", f"El producto '{self.productoSeleccionado.nombreProducto}' tiene una rebaja del {self.productoSeleccionado.rebaja}%, quiere mantener el producto en rebaja?")
+                    itemsProducto['precio'] = self.result
+                    itemsIntroducidos = True
+                    print("PRECIO INTRODUCIDO CORRECTAMENTE")
             if self.entryCantidad2.get() != "Ej: 10":
                 self.result = None
                 cantidad = self.entryCantidad2.get()
@@ -735,21 +736,21 @@ class SGIgui(ttk.Frame):
                     print("CANTIDAD INTRODUCIDO CORRECTAMENTE")
             if itemsIntroducidos == True:
                 if itemsProducto['nombre'] != None and itemsProducto['cantidad'] != None and itemsProducto['precio'] != None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], itemsProducto['cantidad'], itemsProducto['precio'])
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], itemsProducto['cantidad'], itemsProducto['precio'], opcion)
                 elif itemsProducto['nombre'] == None and itemsProducto['cantidad'] != None and itemsProducto['precio'] != None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", itemsProducto['cantidad'], itemsProducto['precio'])
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", itemsProducto['cantidad'], itemsProducto['precio'], opcion)
                 elif itemsProducto['nombre'] != None and itemsProducto['cantidad'] == None and itemsProducto['precio'] != None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, itemsProducto['precio'])
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, itemsProducto['precio'], opcion)
                 elif itemsProducto['nombre'] != None and itemsProducto['cantidad'] != None and itemsProducto['precio'] == None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], itemsProducto['cantidad'], None)
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], itemsProducto['cantidad'], None, opcion)
                 elif itemsProducto['nombre'] != None and itemsProducto['cantidad'] == None and itemsProducto['precio'] == None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, None)
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, None, opcion)
                 elif itemsProducto['nombre'] != None and itemsProducto['cantidad'] == None and itemsProducto['precio'] == None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, None)
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, itemsProducto['nombre'], None, None, opcion)
                 elif itemsProducto['nombre'] == None and itemsProducto['cantidad'] != None and itemsProducto['precio'] == None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", itemsProducto['cantidad'], None)
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", itemsProducto['cantidad'], None, opcion)
                 elif itemsProducto['nombre'] == None and itemsProducto['cantidad'] == None and itemsProducto['precio'] != None:
-                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", None, itemsProducto['precio'])
+                    self.gestor.ActualizarProductoGUI(self.productoSeleccionado, "", None, itemsProducto['precio'], opcion)
                 
                 messagebox.showinfo("Info", f"Producto '{self.productoSeleccionado.nombreProducto}' actualizado correctamente")
                 self.gestor.GuardarArchivo()
@@ -797,6 +798,7 @@ class SGIgui(ttk.Frame):
                         self.productoSeleccionado.AplicarRebaja(self.result)
                         print("Rebaja Aplicada")
                         messagebox.showinfo("Info", f"Se ha aplicado una rebaja del {self.result}% al producto '{self.productoSeleccionado.nombreProducto}'")
+                        self.gestor.PasarValorHistorial()
                         self.gestor.GuardarArchivo()
                         self.CambiarFrame('rebajaFrame')
             else:
@@ -811,6 +813,7 @@ class SGIgui(ttk.Frame):
                 self.productoSeleccionado.QuitarRebaja()
                 print("Rebaja Quitada")
                 messagebox.showinfo("Info", f"Se ha quitado la rebaja al producto '{self.productoSeleccionado.nombreProducto}'")
+                self.gestor.PasarValorHistorial()
                 self.gestor.GuardarArchivo()
                 self.CambiarFrame('rebajaFrame')
             else:
