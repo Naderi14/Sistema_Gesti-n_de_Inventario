@@ -29,6 +29,7 @@ class SGIgui(ttk.Frame):
         # Creacion y configuracion del frame de botones del programa
         self.buttonFrame = Frame(self.root, bg='#88ABAD', bd=5, relief='groove')
         self.buttonFrame.grid(row=0, column=0, sticky='nsew')
+        self.buttonFrame.pack_propagate(False)
         self.buttonFrame.grid_propagate(False)
         self.CrearBotones()
 
@@ -53,11 +54,11 @@ class SGIgui(ttk.Frame):
         
         # Crear y configuracion de cada Frame del menú 
         self.ConfigurarFrame('addFrame', '#FFFCAD', "SGI / Agregar un producto nuevo",
-                             "Poder agregar un producto nuevo para gestionarlo en inventario activo.\nDebe introducir todos los datos requeridos para completar la acción.")
+                             "Poder agregar un producto nuevo para gestionarlo en inventario activo.\nDebe introducir todos los datos requeridos para completar la acción excepto la rebaja.")
         self.ConfigurarFrame('updateFrame', '#FFFCAD', "SGI / Actualizar un producto",
-                             "Poder actualizar un valor concreto o varios de un mismo producto.\nDebe introducir todos los datos requeridos para completar la acción.")
+                             "Poder actualizar un valor concreto o varios de un mismo producto.\nPuede modificar uno o mas elementos disponibles en el producto seleccionado indistintamente.")
         self.ConfigurarFrame('sellFrame', '#FFFCAD', "SGI / Vender un producto",
-                             "Insertar el producto con el que se ha realizado la venta para\nactualizar el stock del producto y la salida de datos financieros.")
+                             "Seleccione el producto del inventario e indique la cantidad deseada a vender.\nHecha la venta, se actualizará el Saldo y el Valor Bruto")
         self.ConfigurarFrame('rebajaFrame', '#FFFCAD', "SGI / Gestionar Rebajas", 
                              "Poder agregar o quitar estados de producto en rebajas.")
         self.ConfigurarFrame('removeFrame', '#FFFCAD', "SGI / Eliminar un producto de la base de datos", 
@@ -85,7 +86,7 @@ class SGIgui(ttk.Frame):
         scrollbar = Scrollbar(terminosFrame)
         scrollbar.pack(side='right', fill="y")
 
-        text = Text(terminosFrame, wrap='word', yscrollcommand=scrollbar.set)
+        text = Text(terminosFrame, wrap='word', yscrollcommand=scrollbar.set, bg="#B1B1B1")
         text.pack(side='left', fill='both', expand=1)
 
         scrollbar.config(command=text.yview)
@@ -94,7 +95,6 @@ class SGIgui(ttk.Frame):
             terminosTexto = file.read()
 
         text.insert('end', terminosTexto)
-
 
     def CrearMenu(self):
         '''
@@ -127,19 +127,19 @@ class SGIgui(ttk.Frame):
         self.iconoRebaja = self.CargarImagen(rs.rutaAdjunto('rebajaItem'), (50,50))
         self.iconoEliminar = self.CargarImagen(rs.rutaAdjunto('removeItem'), (50,50))
         self.iconoShow = self.CargarImagen(rs.rutaAdjunto('showInventario'), (50,50))
-
-        self.botonAgregarP = Button(self.buttonFrame, width=155, height=100, text="Agregar un producto", image=self.iconoAgregar, compound='top', command=lambda: self.CambiarFrame('addFrame'))
-        self.botonAgregarP.grid(row=0, column=0, sticky='w', padx=10, pady=10)
-        self.botonActualizarP = Button(self.buttonFrame, width=155, height=100, text="Actualizar un producto", image=self.iconoActualizar, compound='top', command=lambda: self.CambiarFrame('updateFrame'))
-        self.botonActualizarP.grid(row=1, column=0, sticky='w', padx=10, pady=10)
-        self.botonVenderP = Button(self.buttonFrame, width=155, height=100, text="Vender un producto", image=self.iconoVender, compound='top', command=lambda: self.CambiarFrame('sellFrame'))
-        self.botonVenderP.grid(row=2, column=0, sticky='w', padx=10, pady=10)
-        self.botonAplicarR = Button(self.buttonFrame, width=155, height=100, text="Gestionar Rebajas", image=self.iconoRebaja, compound='top', command=lambda: self.CambiarFrame('rebajaFrame'))
-        self.botonAplicarR.grid(row=3, column=0, sticky='w', padx=10, pady=10)
-        self.botonEliminarP = Button(self.buttonFrame, width=155, height=100, text="Eliminar un producto", image=self.iconoEliminar, compound='top', command=lambda: self.CambiarFrame('removeFrame'))
-        self.botonEliminarP.grid(row=4, column=0, sticky='w', padx=10, pady=10)
-        self.botonMostrarI = Button(self.buttonFrame, width=155, height=100, text="Mostrar inventario", image=self.iconoShow, compound='top', command=lambda: self.CambiarFrame('showFrame'))
-        self.botonMostrarI.grid(row=5, column=0, sticky='w', padx=10, pady=10)
+        
+        self.botonAgregarP = Button(self.buttonFrame, width=180, height=100, text="Agregar un producto", image=self.iconoAgregar, compound='top', command=lambda: self.CambiarFrame('addFrame'))
+        self.botonAgregarP.pack(pady=10, padx=10)
+        self.botonActualizarP = Button(self.buttonFrame, width=180, height=100, text="Actualizar un producto", image=self.iconoActualizar, compound='top', command=lambda: self.CambiarFrame('updateFrame'))
+        self.botonActualizarP.pack(padx=10, pady=10)
+        self.botonVenderP = Button(self.buttonFrame, width=180, height=100, text="Vender un producto", image=self.iconoVender, compound='top', command=lambda: self.CambiarFrame('sellFrame'))
+        self.botonVenderP.pack(padx=10, pady=10)
+        self.botonAplicarR = Button(self.buttonFrame, width=180, height=100, text="Gestionar Rebajas", image=self.iconoRebaja, compound='top', command=lambda: self.CambiarFrame('rebajaFrame'))
+        self.botonAplicarR.pack(padx=10, pady=10)
+        self.botonEliminarP = Button(self.buttonFrame, width=180, height=100, text="Eliminar un producto", image=self.iconoEliminar, compound='top', command=lambda: self.CambiarFrame('removeFrame'))
+        self.botonEliminarP.pack(padx=10, pady=10)
+        self.botonMostrarI = Button(self.buttonFrame, width=180, height=100, text="Mostrar inventario", image=self.iconoShow, compound='top', command=lambda: self.CambiarFrame('showFrame'))
+        self.botonMostrarI.pack(padx=10, pady=10)
 
     def CambiarFrame(self, nombreFrame):
         '''
@@ -560,7 +560,7 @@ class SGIgui(ttk.Frame):
 
     def MostrarLista(self):
         self.listaProductos.delete(0, "end")
-        self.listaProductos.insert(END, "---------------------------------------------------------------------------------------------------------------------------")
+        self.listaProductos.insert(END, "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
         # Añadimos los productos a la lista
         for producto in self.gestor.productos:
             if producto.estaRebajado == False:
@@ -568,7 +568,7 @@ class SGIgui(ttk.Frame):
             else:
                 texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
             self.listaProductos.insert(END, texto)
-            self.listaProductos.insert(END, "---------------------------------------------------------------------------------------------------------------------------")
+            self.listaProductos.insert(END, "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 
     def BuscarID(self):
         # Reset de todas las etiquetas
@@ -856,6 +856,8 @@ class SGIgui(ttk.Frame):
         valoresBruto = []
         saldosCuenta = []
         valorMaximo = 0
+        maximoBruto = 0
+        maximoCuenta = 0
 
         plt.style.use('seaborn-v0_8')
         fig, ax = plt.subplots()
@@ -865,18 +867,25 @@ class SGIgui(ttk.Frame):
             fechas.append(fechaActual)
             valoresBruto.append(int(item['valorBruto']))
             saldosCuenta.append(int(item['saldoCuenta']))
-            if item['valorBruto'] > valorMaximo:
-                valorMaximo = item['valorBruto']
-                if item['saldoCuenta'] > valorMaximo:
-                    valorMaximo = item['saldoCuenta']
-        
+            if item['valorBruto'] > maximoBruto:
+                maximoBruto = item['valorBruto']
+            if item['saldoCuenta'] > maximoCuenta:
+                maximoCuenta = item['saldoCuenta']
+
+        if maximoBruto > maximoCuenta:
+            valorMaximo = maximoBruto
+        else:
+            valorMaximo = maximoCuenta
         margenGrafico = (valorMaximo * 0.2) + valorMaximo
         ax.plot(fechas, valoresBruto, color='red', label='Valor Bruto (€)')
         ax.plot(fechas, saldosCuenta, color='blue', label='Saldo Cuenta (€)')
 
         ax.legend()
 
-        ax.set_title("Histórico balance inventario", fontsize=20)
+        plt.title("Histórico balance inventario\n", fontsize=20, fontweight='bold')
+        plt.suptitle(f"\nPico Bruto: {maximoBruto}€ | Pico Saldo: {maximoCuenta}€ ", fontsize=16)
+        #ax.set_title(f"Histórico balance inventario\n", fontsize=20)
+        #ax.set_suptitle(f"\nPico Bruto: {maximoBruto}€ | Pico Saldo: {maximoCuenta}€ ", fontsize=16)
         ax.set_xlabel('', fontsize=14)
         fig.autofmt_xdate()
         ax.set_ylabel("Euros ( € )", fontsize=14)

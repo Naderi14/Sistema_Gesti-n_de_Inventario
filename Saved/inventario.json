@@ -13,7 +13,7 @@
         "nombre": "Monitor Lenovo UC123145",
         "cantidad": 2,
         "precioReal": 55.68,
-        "precio": 33.4,
+        "precio": 29.39,
         "rebaja": 12,
         "estaRebajado": true
     },
@@ -49,7 +49,7 @@
         "nombre": "Rat\u00f3n marca blanca",
         "cantidad": 10,
         "precioReal": 6.35,
-        "precio": 5.73,
+        "precio": 5.44,
         "rebaja": 5,
         "estaRebajado": true
     },
@@ -77,6 +77,15 @@
         "cantidad": 7,
         "precioReal": 2.15,
         "precio": 2.15,
+        "rebaja": 0,
+        "estaRebajado": false
+    },
+    {
+        "id": 10,
+        "nombre": "Xiaomi Redmi Note 5 Pro",
+        "cantidad": 6,
+        "precioReal": 88.5,
+        "precio": 88.5,
         "rebaja": 0,
         "estaRebajado": false
     }
