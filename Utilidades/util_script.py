@@ -26,7 +26,10 @@ def showNoProductoSeleccionado():
     messagebox.showwarning("Alerta", f"No hay ningún producto seleccionado, busque la ID del producto")
 
 def showNoDatosIntroducidos(nombreProducto):
-    messagebox.showwarning("Alerta", f"No se ha introducido ningún dato para el producto {nombreProducto}")
+    messagebox.showwarning("Alerta", f"No se ha introducido ningún dato para el producto '{nombreProducto}'")
+
+def showNoStockForSell(nombreProducto):
+    messagebox.showwarning("Alerta", f"El producto '{nombreProducto}' se encuentra agotado")
 
 # GUI FUNCTION
 def CheckNuevoProducto(gui, nombreProducto, precioProducto, cantidadProducto, rebajaProducto):

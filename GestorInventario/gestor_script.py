@@ -80,6 +80,13 @@ class Gestor():
             producto.ActualizarCantidad(cantidad)
 
     def VenderProductoGUI(self, producto, cantidad):
+        '''
+            Funcion que gestiona la accion de vender un producto teniendo como entrada los siguientes parametros:
+                - producto: valor objeto de tipo producto
+                - cantidad: valor de tipo entero
+            Se asignara la suma ganada por la venta al saldoCuenta y se le resta al valorBruto haciendo referencia de que ya no
+            tenemos esos productos consignados en el almacén y por tanto, menor valor bruto
+        '''
         self.saldoCuenta += round(cantidad * producto.precio, 2)
         self.valorBruto -= round(producto.precioReal * cantidad, 2)
         self.PasarValorHistorial()
@@ -87,14 +94,25 @@ class Gestor():
         producto.ActualizarCantidad(cantidadNueva)
 
     def EliminarProductoGUI(self, producto, opcion):
+        '''
+            Función en que se elimina un producto del almacén vendiendo o sin vender su stock remanente
+        '''
+        eliminado = False
         if opcion == 1:
-            self.saldoCuenta += round(producto.cantidad * producto.precio, 2)
-            self.valorBruto -= round(producto.precio * producto.cantidad, 2)
-            self.productos.remove(producto)
+            if producto.cantidad > 0:
+                self.saldoCuenta += round(producto.cantidad * producto.precio, 2)
+                self.valorBruto -= round(producto.precio * producto.cantidad, 2)
+                self.productos.remove(producto)
+                eliminado = True
+            else:
+                us.showNoStockForSell(producto.nombreProducto)
         elif opcion == 2:
             self.valorBruto -= round(producto.precio * producto.cantidad, 2)
             self.productos.remove(producto)
-        self.PasarValorHistorial()
+            eliminado = True
+        if eliminado:
+            self.PasarValorHistorial()
+            return eliminado
     
     def AbrirArchivo(self):
         archivoInventario = Path(rs.rutaSave("inventario"))

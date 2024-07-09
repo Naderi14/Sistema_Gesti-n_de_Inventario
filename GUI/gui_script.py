@@ -151,6 +151,8 @@ class SGIgui(ttk.Frame):
         self.entryNombre1.insert(0, "Ej: Jabón de manos")
         self.entryNombre2.delete(0, 'end')
         self.entryNombre2.insert(0, "Ej: Jabón de manos")
+        self.entryNombre3.delete(0, 'end')
+        self.entryNombre3.insert(0, "Buscar por nombre")
         self.entryPrecio1.delete(0, 'end')
         self.entryPrecio1.insert(0, "Ej: 1.45")
         self.entryPrecio2.delete(0, 'end')
@@ -230,6 +232,16 @@ class SGIgui(ttk.Frame):
         if self.entryNombre2.get() == "":
             self.entryNombre2.insert(0, "Ej: Jabón de manos")
             self.entryNombre2.config(fg="Gray")
+
+    def entryNombreFocusIn3(self, event):
+        if self.entryNombre3.get() == "Buscar por nombre":
+            self.entryNombre3.delete(0, "end")
+            self.entryNombre3.config(fg="Black")
+    
+    def entryNombreFocusOut3(self, event):
+        if self.entryNombre3.get() == "":
+            self.entryNombre3.insert(0, "Buscar por nombre")
+            self.entryNombre3.config(fg="Gray")
 
     def entryPrecioFocusIn1(self, event):
         if self.entryPrecio1.get() == "Ej: 1.45":
@@ -552,8 +564,14 @@ class SGIgui(ttk.Frame):
             self.listaProductos.pack(fill="both", expand=1)
             self.listaProductos.bind('<Button-1>', self.QuitarSeleccionLista)
             self.listaProductos.bind('<Button-2>', self.QuitarSeleccionLista)
-            
             self.botFrame.config(bg="#ADD8E6") # Celeste
+
+            self.entryNombre3 = Entry(self.botFrame, width=40, bg="#FFEFFF", fg="Gray")
+            self.entryNombre3.insert(0, "Buscar por nombre")
+            self.entryNombre3.bind("<FocusIn>", self.entryNombreFocusIn3)
+            self.entryNombre3.bind("<FocusOut>", self.entryNombreFocusOut3)
+            self.entryNombre3.place(x=50, y=550)
+            Button(self.botFrame, text="Buscar", width=30, height=2, bg="#CCC", command=self.MostrarLista).place(x=62, y=580)
 
     def QuitarSeleccionLista(self, event = None):
         return "break"
@@ -563,12 +581,13 @@ class SGIgui(ttk.Frame):
         self.listaProductos.insert(END, "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
         # Añadimos los productos a la lista
         for producto in self.gestor.productos:
-            if producto.estaRebajado == False:
-                texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precio}€\n"
-            else:
-                texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
-            self.listaProductos.insert(END, texto)
-            self.listaProductos.insert(END, "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+            if self.entryNombre3.get() == "Buscar por nombre":
+                if producto.estaRebajado == False:
+                    texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precio}€\n"
+                else:
+                    texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
+                self.listaProductos.insert(END, texto)
+                self.listaProductos.insert(END, "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 
     def BuscarID(self):
         # Reset de todas las etiquetas
@@ -769,7 +788,7 @@ class SGIgui(ttk.Frame):
                             self.InfoEtiquetas(100)
                             self.CambiarFrame('sellFrame')
             else:
-                messagebox.showwarning("Alerta", f"El producto '{self.productoSeleccionado.nombreProducto}' se encuentra agotado")
+                us.showNoStockForSell(self.productoSeleccionado.nombreProducto)
         else:
             us.showNoProductoSeleccionado()
 
@@ -813,14 +832,15 @@ class SGIgui(ttk.Frame):
         # Lógica para eliminar un producto
         if self.productoSeleccionado:
             print(f"{self.opcionVenderBeforeRmv.get()} | {self.productoSeleccionado.nombreProducto}")
-            self.gestor.EliminarProductoGUI(self.productoSeleccionado, self.opcionVenderBeforeRmv.get())
-            if self.opcionVenderBeforeRmv.get() == 1:
-                messagebox.showinfo("Info", f"Se ha eliminado el producto '{self.productoSeleccionado.nombreProducto}' vendiendo su stock de {self.productoSeleccionado.cantidad}uds.")
-            elif self.opcionVenderBeforeRmv.get() == 2:
-                messagebox.showinfo("Info", f"Se ha eliminado el producto '{self.productoSeleccionado.nombreProducto}'")
-            self.gestor.GuardarArchivo()
-            self.InfoEtiquetas(100)
-            self.CambiarFrame('removeFrame')
+            eliminado = self.gestor.EliminarProductoGUI(self.productoSeleccionado, self.opcionVenderBeforeRmv.get())
+            if eliminado:
+                if self.opcionVenderBeforeRmv.get() == 1:
+                    messagebox.showinfo("Info", f"Se ha eliminado el producto '{self.productoSeleccionado.nombreProducto}' vendiendo su stock de {self.productoSeleccionado.cantidad}uds.")
+                elif self.opcionVenderBeforeRmv.get() == 2:
+                    messagebox.showinfo("Info", f"Se ha eliminado el producto '{self.productoSeleccionado.nombreProducto}'")
+                self.gestor.GuardarArchivo()
+                self.InfoEtiquetas(100)
+                self.CambiarFrame('removeFrame')
         else:
             us.showNoProductoSeleccionado()
                 

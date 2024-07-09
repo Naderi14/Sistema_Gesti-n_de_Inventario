@@ -118,5 +118,20 @@
         "fecha": "2024-06-25",
         "valorBruto": 1154.32,
         "saldoCuenta": 315.61
+    },
+    {
+        "fecha": "2024-06-26",
+        "valorBruto": 1249.04,
+        "saldoCuenta": 315.61
+    },
+    {
+        "fecha": "2024-06-27",
+        "valorBruto": 1154.32,
+        "saldoCuenta": 410.33000000000004
+    },
+    {
+        "fecha": "2024-06-28",
+        "valorBruto": 1283.02,
+        "saldoCuenta": 412.33000000000004
     }
 ]
