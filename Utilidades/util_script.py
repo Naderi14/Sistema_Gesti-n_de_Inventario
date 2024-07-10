@@ -3,6 +3,35 @@ from Utilidades import util_script as us
 from tkinter import *
 from tkinter import messagebox
 
+def ReturnCadenaProcesada(cadena):
+    letrasAcentuadas = ['á', 'à', 'ä', 'é', 'è', 'ë', 'í', 'ì', 'ï', 'ó', 'ò', 'ö', 'ú', 'ù', 'ü']
+    cadenaProcesada = ''
+    letraCambiada = False
+    for letraCadena in cadena:
+        for letraAcentuada in letrasAcentuadas:
+            if letraAcentuada == letraCadena:
+                if letraAcentuada == 'á' or letraAcentuada == 'à' or letraAcentuada == 'ä':
+                    print("Letra acentuada hayada con la A")
+                    letraCadena = 'a'
+                if letraAcentuada == 'é' or letraAcentuada == 'è' or letraAcentuada == 'ë':
+                    print("Letra acentuada hayada con la E")
+                    letraCadena = 'e'
+                if letraAcentuada == 'í' or letraAcentuada == 'ì' or letraAcentuada == 'ï':
+                    print("Letra acentuada hayada con la I")
+                    letraCadena = 'i'
+                if letraAcentuada == 'ó' or letraAcentuada == 'ò' or letraAcentuada == 'ö':
+                    print("Letra acentuada hayada con la O")
+                    letraCadena = 'o'
+                if letraAcentuada == 'ú' or letraAcentuada == 'ù' or letraAcentuada == 'ü':
+                    print("Letra acentuada hayada con la U")
+                    letraCadena = 'u'
+                cadenaProcesada += letraCadena
+                letraCambiada = True
+        if letraCambiada == False:
+            cadenaProcesada += letraCadena
+        letraCambiada = False
+    return cadenaProcesada
+
 def listaVacia(lista):
     return len(lista) <= 0
 

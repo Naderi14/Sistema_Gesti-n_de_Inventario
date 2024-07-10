@@ -577,29 +577,24 @@ class SGIgui(ttk.Frame):
         return "break"
 
     def MostrarLista(self):
+        cadenaBusqueda = us.ReturnCadenaProcesada(self.entryNombre3.get().lower())
+        print(cadenaBusqueda)
         self.listaProductos.delete(0, "end")
         self.listaProductos.insert(END, "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
         # Añadimos los productos a la lista
         for producto in self.gestor.productos:
             if self.entryNombre3.get() == "Buscar por nombre":
                 if producto.estaRebajado == False:
-                    print("El programa paso por 1.1")
                     texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precio}€\n"
                 else:
-                    print("El programa paso por 1.2")
                     texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
                 self.listaProductos.insert(END, texto)
                 self.listaProductos.insert(END, "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
             else:
-                cadenaBusqueda = self.entryNombre3.get()
-                print(cadenaBusqueda)
-                print(producto.nombreProducto)
-                if cadenaBusqueda in producto.nombreProducto:
+                if cadenaBusqueda in us.ReturnCadenaProcesada(producto.nombreProducto.lower()):
                     if producto.estaRebajado == False:
-                        print("El programa paso por 2.1")
                         texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precio}€\n"
                     else:
-                        print("El programa paso por 2.2")
                         texto = f" ID:{producto.id}    |    {producto.nombreProducto}    |    {producto.cantidad} uds.    |    {producto.precioReal}€ - {producto.rebaja}% = {producto.precio}€\n"
                     self.listaProductos.insert(END, texto)
                     self.listaProductos.insert(END, "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
