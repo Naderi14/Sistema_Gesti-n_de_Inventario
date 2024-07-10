@@ -916,7 +916,7 @@ class SGIgui(ttk.Frame):
         ax.legend()
 
         plt.title("Histórico balance inventario\n", fontsize=20, fontweight='bold')
-        plt.suptitle(f"\nPico Bruto: {maximoBruto}€ | Pico Saldo: {maximoCuenta}€ ", fontsize=16)
+        plt.suptitle(f"\nPico Bruto: {round(maximoBruto,2)}€ | Pico Saldo: {round(maximoCuenta,2)}€ ", fontsize=16)
         #ax.set_title(f"Histórico balance inventario\n", fontsize=20)
         #ax.set_suptitle(f"\nPico Bruto: {maximoBruto}€ | Pico Saldo: {maximoCuenta}€ ", fontsize=16)
         ax.set_xlabel('', fontsize=14)
