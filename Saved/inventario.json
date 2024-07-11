@@ -49,7 +49,7 @@
         "nombre": "Rat\u00f3n marca blanca",
         "cantidad": 10,
         "precioReal": 6.35,
-        "precio": 4.0,
+        "precio": 3.8,
         "rebaja": 5,
         "estaRebajado": true
     },
@@ -94,14 +94,14 @@
         "nombre": "Mochila Reebook",
         "cantidad": 6,
         "precioReal": 21.45,
-        "precio": 13.18,
+        "precio": 11.2,
         "rebaja": 15,
         "estaRebajado": true
     },
     {
         "id": 12,
         "nombre": "Mechero",
-        "cantidad": 1,
+        "cantidad": 38,
         "precioReal": 1.0,
         "precio": 1.0,
         "rebaja": 0,
