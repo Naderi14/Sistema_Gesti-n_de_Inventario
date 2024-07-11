@@ -1,20 +1,5 @@
 import os
 
-def rutaSave(archivo):
-    # Rutas para archivos de guardado
-    if archivo == "finanzas":
-        rutaRelativa = "../SGI_Project_GUI/Saved/finanzas.json"
-        rutaAbsoluta = os.path.abspath(rutaRelativa)
-        return f'{rutaAbsoluta}'
-    elif archivo == "inventario":
-        rutaRelativa = "../SGI_Project_GUI/Saved/inventario.json"
-        rutaAbsoluta = os.path.abspath(rutaRelativa)
-        return f'{rutaAbsoluta}'
-    elif archivo == "historial":
-        rutaRelativa = "../SGI_Project_GUI/Saved/historial.json"
-        rutaAbsoluta = os.path.abspath(rutaRelativa)
-        return f'{rutaAbsoluta}'
-
 def rutaAdjunto(archivo):
     # Rutas para imagenes de la aplicación
     directorioScript = os.path.dirname(os.path.abspath(__file__))
@@ -27,7 +12,10 @@ def rutaAdjunto(archivo):
         'showInventario' : "Resources/showInventario.png",
         'return' : "Resources/return.png",
         'icono' : "Resources/logoVentana.ico",
-        'terminos' : "Resources/terminosCondiciones.txt"
+        'terminos' : "Resources/terminosCondiciones.txt",
+        'finanzas' : 'Saved/finanzas.json',
+        'inventario' : 'Saved/inventario.json',
+        'historial' : 'Saved/historial.json'
     }
     if archivo in rutasRelativas:
         rutaAbsoluta = os.path.join(directorioScript, rutasRelativas[archivo])

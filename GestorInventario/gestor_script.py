@@ -95,7 +95,10 @@ class Gestor():
 
     def EliminarProductoGUI(self, producto, opcion):
         '''
-            Función en que se elimina un producto del almacén vendiendo o sin vender su stock remanente
+            Función en que se elimina un producto del almacén vendiendo o sin vender su stock
+            Entran los siguientes parametros:
+                - producto: valor objeto de tipo producto
+                - opcion: valor tipo entero que sirve para determinar que opcion se elije des de la GUI
         '''
         eliminado = False
         if opcion == 1:
@@ -115,9 +118,14 @@ class Gestor():
             return eliminado
     
     def AbrirArchivo(self):
-        archivoInventario = Path(rs.rutaSave("inventario"))
-        archivoFinanzas = Path(rs.rutaSave("finanzas"))
-        archivoHistorial = Path(rs.rutaSave("historial"))
+        '''
+            Función que abrirá los archivos de guardado del programa, en caso de no existir, los creará estando vacios, y si existen pero estan vacios
+            generaremos un except con un print en modo debug meramente informativo
+            Cargará cada archivo para almacenarlos en las listas de variables o variables correspondientes en cada caso
+        '''
+        archivoInventario = Path(rs.rutaAdjunto("inventario"))
+        archivoFinanzas = Path(rs.rutaAdjunto("finanzas"))
+        archivoHistorial = Path(rs.rutaAdjunto("historial"))
         valorBrutoTemp = 0
         try:
             contenidoInventario = archivoInventario.read_text()
@@ -160,6 +168,10 @@ class Gestor():
                 print("El archivo esta vacio, proseguimos con el programa")
     
     def PasarValorHistorial(self):
+        '''
+            Funcion que se encarga de apuntar la fecha junto con los balances disponibles en la aplicación e introducirlos en una lista de diccionarios
+            La fecha se convierte en tipo String
+        '''
         fechaActual = dt.date.today()
         fechaCadena = fechaActual.isoformat()
         pasoHistorial = {
@@ -170,9 +182,15 @@ class Gestor():
         self.fechasValorBruto.append(pasoHistorial)
 
     def GuardarArchivo(self):
-        archivoInventario = Path(rs.rutaSave("inventario"))
-        archivoFinanzas = Path(rs.rutaSave("finanzas"))
-        archivoHistorial = Path(rs.rutaSave("historial"))
+        '''
+            Función que se encarga de guardar en los archivos correspondientes los datos:
+                - Lista de objetos: self.productos(list[diccionarios])
+                - Valores: self.valorBruto(float), self.saldoCuenta(float)
+                - Historial: self.fechasValorBruto(list[string, float, float])
+        '''
+        archivoInventario = Path(rs.rutaAdjunto("inventario"))
+        archivoFinanzas = Path(rs.rutaAdjunto("finanzas"))
+        archivoHistorial = Path(rs.rutaAdjunto("historial"))
 
         # Cargando los productos con la funcion de ObjToDict() que convierto explicitamente objetos a diccionarios
         productos = json.dumps(self.ObjToDict(), indent=4)
@@ -191,6 +209,9 @@ class Gestor():
         archivoHistorial.write_text(historial)
 
     def ObjToDict(self):
+        '''
+            Funcion que sirve para convertir los objetos de tipo Producto en diccionarios para poderlos almacenar en .json y que sean serializables
+        '''
         if not us.listaVacia(self.productos):
             self.exportProductos = []
             for producto in self.productos:

@@ -1,7 +1,6 @@
 from GUI.gui_script import SGIgui
 from tkinter import Tk
 import os, sys
-import rute_script as rs
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 

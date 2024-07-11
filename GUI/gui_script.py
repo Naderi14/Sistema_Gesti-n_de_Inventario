@@ -214,141 +214,225 @@ class SGIgui(ttk.Frame):
 
     # Funciones de FocusIn y FocusOut de los Entry de todos los menús
     def entryNombreFocusIn1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre1.get() == "Ej: Jabón de manos":
             self.entryNombre1.delete(0, "end")
             self.entryNombre1.config(fg="Black")
     
     def entryNombreFocusOut1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre1.get() == "":
             self.entryNombre1.insert(0, "Ej: Jabón de manos")
             self.entryNombre1.config(fg="Gray")
 
     def entryNombreFocusIn2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre2.get() == "Ej: Jabón de manos":
             self.entryNombre2.delete(0, "end")
             self.entryNombre2.config(fg="Black")
     
     def entryNombreFocusOut2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre2.get() == "":
             self.entryNombre2.insert(0, "Ej: Jabón de manos")
             self.entryNombre2.config(fg="Gray")
 
     def entryNombreFocusIn3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre3.get() == "Buscar por nombre":
             self.entryNombre3.delete(0, "end")
             self.entryNombre3.config(fg="Black")
     
     def entryNombreFocusOut3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryNombre3.get() == "":
             self.entryNombre3.insert(0, "Buscar por nombre")
             self.entryNombre3.config(fg="Gray")
 
     def entryPrecioFocusIn1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryPrecio1.get() == "Ej: 1.45":
             self.entryPrecio1.delete(0, "end")
             self.entryPrecio1.config(fg="Black")
 
     def entryPrecioFocusOut1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryPrecio1.get() == "":
             self.entryPrecio1.insert(0, "Ej: 1.45")
             self.entryPrecio1.config(fg="Gray")
 
     def entryPrecioFocusIn2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryPrecio2.get() == "Ej: 1.45":
             self.entryPrecio2.delete(0, "end")
             self.entryPrecio2.config(fg="Black")
 
     def entryPrecioFocusOut2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryPrecio2.get() == "":
             self.entryPrecio2.insert(0, "Ej: 1.45")
             self.entryPrecio2.config(fg="Gray")
 
     def entryCantidadFocusIn1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad1.get() == "Ej: 10":
             self.entryCantidad1.delete(0, "end")
             self.entryCantidad1.config(fg="Black")
 
     def entryCantidadFocusOut1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad1.get() == "":
             self.entryCantidad1.insert(0, "Ej: 10")
             self.entryCantidad1.config(fg="Gray")
 
     def entryCantidadFocusIn2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad2.get() == "Ej: 10":
             self.entryCantidad2.delete(0, "end")
             self.entryCantidad2.config(fg="Black")
 
     def entryCantidadFocusOut2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad2.get() == "":
             self.entryCantidad2.insert(0, "Ej: 10")
             self.entryCantidad2.config(fg="Gray")
 
     def entryCantidadFocusIn3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad3.get() == "Ej: 10":
             self.entryCantidad3.delete(0, "end")
             self.entryCantidad3.config(fg="Black")
 
     def entryCantidadFocusOut3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryCantidad3.get() == "":
             self.entryCantidad3.insert(0, "Ej: 10")
             self.entryCantidad3.config(fg="Gray")
 
     def entryRebajaFocusIn1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryRebaja1.get() == "Ej: 25":
             self.entryRebaja1.delete(0, "end")
             self.entryRebaja1.config(fg="Black")
 
     def entryRebajaFocusOut1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryRebaja1.get() == "":
             self.entryRebaja1.insert(0, "Ej: 25")
             self.entryRebaja1.config(fg="Gray")
 
     def entryRebajaFocusIn2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryRebaja2.get() == "Ej: 25":
             self.entryRebaja2.delete(0, "end")
             self.entryRebaja2.config(fg="Black")
 
     def entryRebajaFocusOut2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryRebaja2.get() == "":
             self.entryRebaja2.insert(0, "Ej: 25")
             self.entryRebaja2.config(fg="Gray")
 
     def entryIDFocusIn1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID1.get() == "Ej: 4":
             self.entryID1.delete(0, "end")
             self.entryID1.config(fg="Black")
 
     def entryIDFocusOut1(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID1.get() == "":
             self.entryID1.insert(0, "Ej: 4")
             self.entryID1.config(fg="Gray")
 
     def entryIDFocusIn2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID2.get() == "Ej: 4":
             self.entryID2.delete(0, "end")
             self.entryID2.config(fg="Black")
 
     def entryIDFocusOut2(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID2.get() == "":
             self.entryID2.insert(0, "Ej: 4")
             self.entryID2.config(fg="Gray")
 
     def entryIDFocusIn3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID3.get() == "Ej: 4":
             self.entryID3.delete(0, "end")
             self.entryID3.config(fg="Black")
 
     def entryIDFocusOut3(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID3.get() == "":
             self.entryID3.insert(0, "Ej: 4")
             self.entryID3.config(fg="Gray")
 
     def entryIDFocusIn4(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID4.get() == "Ej: 4":
             self.entryID4.delete(0, "end")
             self.entryID4.config(fg="Black")
 
     def entryIDFocusOut4(self, event):
+        '''
+            Funcion para establecer confort de uso de los entry
+        '''
         if self.entryID4.get() == "":
             self.entryID4.insert(0, "Ej: 4")
             self.entryID4.config(fg="Gray")
@@ -574,9 +658,15 @@ class SGIgui(ttk.Frame):
             Button(self.botFrame, text="Buscar", width=30, height=2, bg="#CCC", command=self.MostrarLista).place(x=62, y=580)
 
     def QuitarSeleccionLista(self, event = None):
+        '''
+            Función que mediante un evento evitará en mayor medida la selección de los ListBox usados para display información
+        '''
         return "break"
 
     def MostrarLista(self):
+        '''
+            Funcion que mostrará en la GUI la lista de productos en función si estan rebajados o si hay algun campo de búsqueda introducido
+        '''
         cadenaBusqueda = us.ReturnCadenaProcesada(self.entryNombre3.get().lower())
         print(cadenaBusqueda)
         self.listaProductos.delete(0, "end")
@@ -603,6 +693,10 @@ class SGIgui(ttk.Frame):
 
 
     def BuscarID(self):
+        '''
+            Funcion que toma de la clase la informacion del ID introducido en el Entry, asigna el numero de entrada que es y llama las funciones para que procesen
+            la información acaparada
+        '''
         # Reset de todas las etiquetas
         self.infoNombre1.delete(0, "end")
         self.infoNombre2.delete(0, "end")
@@ -636,6 +730,10 @@ class SGIgui(ttk.Frame):
             self.InfoEtiquetas(numEntry)
             
     def InfoEtiquetas(self, numEntry):
+        '''
+            Funcion que sirve para crear el Display informativo del producto seleccionado con la que el usuario esta llevando a cabo una gestión
+                - numEntry: valor tipo entero que se recibe como parametro para indicar que grupo informativo debemos entregar la información
+        '''
         if self.productoSeleccionado:
             if numEntry == 0:
                 self.infoNombre0.insert(0, f"{self.productoSeleccionado.nombreProducto}")
@@ -681,7 +779,10 @@ class SGIgui(ttk.Frame):
 
     def AgregarProducto(self):
         '''
-            Funcion aun en desarrollo
+            Funcion para gestionar el vender un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma
+            En esta función debido a que se permite dar como opcion libre si se desea rebajar el producto ya de primera instancia
+            se gestionaran los datos que le enviaremos al gestor en proporcion a la eleccion del usuario.
         '''
         self.result = None
 
@@ -721,6 +822,12 @@ class SGIgui(ttk.Frame):
                 self.gestor.GuardarArchivo()
 
     def ActualizarProducto(self):
+        '''
+            Funcion para gestionar el actualizar un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma.
+            Esta función concretamente tambien gestiona la posibilidad de poder insertar 1 sola opcion de las 3 disponibles para que sea
+            totalmente libre el usuario de poder elegir a placer que items desea actualizar indistintamente
+        '''
         if self.productoSeleccionado:
             opcion = False
             itemsIntroducidos = False
@@ -783,6 +890,10 @@ class SGIgui(ttk.Frame):
             us.showNoProductoSeleccionado()
 
     def VenderProducto(self):
+        '''
+            Funcion para gestionar el vender un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma
+        '''
         if self.productoSeleccionado:
             if self.productoSeleccionado.cantidad != 0:
                 if self.entryCantidad3.get() == "Ej: 10":
@@ -807,7 +918,10 @@ class SGIgui(ttk.Frame):
 
 
     def AplicarRebaja(self):
-        # Lógica para aplicar una rebaja
+        '''
+            Funcion para gestionar el agregar rebaja a un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma
+        '''
         if self.productoSeleccionado:
             if self.productoSeleccionado.estaRebajado == False:
                 if self.entryRebaja2.get() == "Ej: 25":
@@ -828,7 +942,10 @@ class SGIgui(ttk.Frame):
             us.showNoProductoSeleccionado()
 
     def QuitarRebaja(self):
-        # Lógica para quitar una rebaja
+        '''
+            Funcion para gestionar el quitar rebaja a un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma
+        '''
         if self.productoSeleccionado:
             if self.productoSeleccionado.estaRebajado == True:
                 self.productoSeleccionado.QuitarRebaja()
@@ -842,7 +959,10 @@ class SGIgui(ttk.Frame):
             us.showNoProductoSeleccionado()
 
     def EliminarProducto(self):
-        # Lógica para eliminar un producto
+        '''
+            Funcion para gestionar el eliminar un producto. Des de la gui se llamaran las funciones idoneas para completar dicha gestion
+            y mediante esta funcion dar feedback al usuario de la misma
+        '''        
         if self.productoSeleccionado:
             print(f"{self.opcionVenderBeforeRmv.get()} | {self.productoSeleccionado.nombreProducto}")
             eliminado = self.gestor.EliminarProductoGUI(self.productoSeleccionado, self.opcionVenderBeforeRmv.get())
@@ -856,10 +976,6 @@ class SGIgui(ttk.Frame):
                 self.CambiarFrame('removeFrame')
         else:
             us.showNoProductoSeleccionado()
-                
-
-    def SalirApp(self):
-        self.root.destroy()
 
     def CargarImagen(self, ruta, size):
         '''
@@ -871,6 +987,9 @@ class SGIgui(ttk.Frame):
         return ImageTk.PhotoImage(imagen)
     
     def ExportarInv(self):
+        '''
+            Función para poder exportar un archivo .xlsx del inventario actual a un directorio de libre elección en local
+        '''
         rutaArchivo = fd.asksaveasfilename(
             title="Exportar Inventario en Excel",
             initialdir='.',
@@ -885,6 +1004,9 @@ class SGIgui(ttk.Frame):
         self.gestor.ExportarExcel(ruta)
 
     def GenerarGrafica(self):
+        '''
+            Funcion para generar una grafica a partir de todos los datos disponibles en memoria de los balances economicos
+        '''
         fechas = []
         valoresBruto = []
         saldosCuenta = []

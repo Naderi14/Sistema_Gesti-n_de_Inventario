@@ -4,6 +4,9 @@ from tkinter import *
 from tkinter import messagebox
 
 def ReturnCadenaProcesada(cadena):
+    '''
+        Función para procesar la cadena entrante y devolverla con vocales sin signos ortograficos
+    '''
     letrasAcentuadas = ['á', 'à', 'ä', 'é', 'è', 'ë', 'í', 'ì', 'ï', 'ó', 'ò', 'ö', 'ú', 'ù', 'ü']
     cadenaProcesada = ''
     letraCambiada = False
@@ -37,31 +40,63 @@ def listaVacia(lista):
 
 # Puñado de alertas, errores e informaciones para notificar al usuario de sus acciones y condiciones del proceso de la aplicación
 def showListaVacia():
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showwarning("Aviso", f"El inventario se encuentra vacío")
 
 def showInProgress():
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showwarning("Aviso", "Esta funcionalidad se encuentra en desarrollo.\nDisculpe las molestias")
 
 def showNoRuteSpecified():
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showerror("Error", "No se ha escpecificado ninguna ruta de guardado!")
 
 def showProductoNotFound(id):
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showerror("Error", f"No existe ningún producto con ID:{id}")
 
 def showProductoEncontrado():
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showinfo("Info", f"Producto encontrado")
 
 def showNoProductoSeleccionado():
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showwarning("Alerta", f"No hay ningún producto seleccionado, busque la ID del producto")
 
 def showNoDatosIntroducidos(nombreProducto):
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showwarning("Alerta", f"No se ha introducido ningún dato para el producto '{nombreProducto}'")
 
 def showNoStockForSell(nombreProducto):
+    '''
+        Funcion de mensaje para el usuario
+    '''
     messagebox.showwarning("Alerta", f"El producto '{nombreProducto}' se encuentra agotado")
 
 # GUI FUNCTION
 def CheckNuevoProducto(gui, nombreProducto, precioProducto, cantidadProducto, rebajaProducto):
+    '''
+        Funcion para control de excepciones de los datos de entrada para la creacion de un nuevo producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - nombreProducto: valor tipo string
+            - precioProducto: valor tipo float
+            - cantidadProducto: valor tipo int
+            - rebajaProducto: valor tipo int
+    '''
     nuevoProducto = []
     ok = 0
     # Comprobamos posibles errores de entrada y control de excepciones en cada caso
@@ -114,6 +149,11 @@ def CheckNuevoProducto(gui, nombreProducto, precioProducto, cantidadProducto, re
 
 # GUI FUNCTION
 def CheckNombreGUI(gui, nombreProducto):
+    '''
+        Funcion que sirve para control de excepciones para el nombre del producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - nombreProducto: valor tipo string
+    '''
     if nombreProducto == "":
         messagebox.showerror("Error", "El nombre del producto no puede quedar vacío")
     else:
@@ -121,6 +161,11 @@ def CheckNombreGUI(gui, nombreProducto):
 
 # GUI FUNCTION
 def CheckPrecioGUI(gui, precioProducto):
+    '''
+        Funcion que sirve para control de excepciones para el precio del producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - precioProducto: valor tipo float
+    '''
     try:
         precioProducto = round(float(precioProducto), 2)
         if precioProducto <= 0:
@@ -132,6 +177,11 @@ def CheckPrecioGUI(gui, precioProducto):
 
 # GUI FUNCTION
 def CheckCantidadGUI(gui, cantidadProducto):
+    '''
+        Funcion que sirve para control de excepciones para la cantidad del producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - cantidadProducto: valor tipo int
+    '''
     try:
         cantidadProducto = int(cantidadProducto)
         if cantidadProducto > 0:
@@ -143,6 +193,11 @@ def CheckCantidadGUI(gui, cantidadProducto):
                 
 # GUI FUNCTION
 def CheckRebajaGUI(gui, productoRebaja):
+    '''
+        Funcion que sirve para control de excepciones para la rebaja del producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - productoRebaja: valor tipo int
+    '''
     try:
         productoRebaja = int(productoRebaja)
         if 0 < productoRebaja < 101:
@@ -154,6 +209,11 @@ def CheckRebajaGUI(gui, productoRebaja):
                
 # GUI FUNCTION
 def CheckIDGUI(gui, id):
+    '''
+        Funcion que sirve para control de excepciones para la ID del producto
+            - gui: instancia de la clase SGIgui, para poder manipular la variable result
+            - id: valor tipo int
+    '''
     try:
         id = int(id)
         if id > 0:
@@ -162,11 +222,6 @@ def CheckIDGUI(gui, id):
             raise ValueError
     except:
         messagebox.showerror("Error", "El ID debe ser mayor a 0, sin decimales")
-    
-def serializarDateTime(obj):
-    if isinstance(obj, datetime.datetime):
-        return obj.isoformat()
-    raise TypeError("Tipo de objeto no serializable")
 
 # =================================================================
 # -------------------- FUNCIONES DEPRECATED -----------------------
